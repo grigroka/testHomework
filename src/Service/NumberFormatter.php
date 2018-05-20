@@ -23,9 +23,9 @@ class NumberFormatter
         }
 
         if (99950 <= $number && $number < 999500) {
-            $rounded = round($number, -4);
+            $rounded = round($number, -3);
             $string = number_format($rounded, 1, '.', '.');
-            return mb_substr($string, 0, -7) . 'K';
+            return mb_substr($string, 0, -6) . 'K';
         }
 
         return $number;
