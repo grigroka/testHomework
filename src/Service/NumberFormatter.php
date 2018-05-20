@@ -16,23 +16,31 @@ class NumberFormatter
      */
     public function convert($number)
     {
-        if ($number >= 999500) {
+        $absNumber = abs($number);
+        if ($absNumber >= 999500) {
             $rounded = round($number, -4);
             $string = number_format($rounded, 1, '.', '.');
             return mb_substr($string, 0, -7) . 'M';
         }
 
-        if (99950 <= $number && $number < 999500) {
+        if (99950 <= $absNumber && $absNumber < 999500) {
             $rounded = round($number, -3);
             return mb_substr($rounded, 0, -3) . 'K';
         }
 
-        if (1000 <= $number && $number < 99950) {
+        if (1000 <= $absNumber && $absNumber < 99950) {
             $rounded = round($number, 0);
             $string = number_format($rounded, 0, '.', ' ');
             return $string;
         }
 
-        return $number;
+        if ($absNumber < 1000) {
+            $rounded = round($number, 2);
+            if (abs($rounded) === 1000.00) {
+                $string = number_format($rounded, 0, '.', ' ');
+                return $string;
+            }
+        }
+        return number_format($number, 2, '.', ' ');
     }
 }
