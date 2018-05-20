@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="PhpDockerContainerSettings">
+    <list>
+      <map>
+        <entry key="8d80a9ce-2d90-4be6-9150-36c146da4875">
+          <value>
+            <DockerContainerSettings>
+              <option name="version" value="1" />
+              <option name="volumeBindings">
+                <list>
+                  <DockerVolumeBindingImpl>
+                    <option name="containerPath" value="/opt/project" />
+                  </DockerVolumeBindingImpl>
+                </list>
+              </option>
+            </DockerContainerSettings>
+          </value>
+        </entry>
+      </map>
+    </list>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+</project>
