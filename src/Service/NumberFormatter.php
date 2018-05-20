@@ -19,7 +19,7 @@ class NumberFormatter
         $absNumber = abs($number);
         if ($absNumber >= 999500) {
             $rounded = round($number, -4);
-            $string = number_format($rounded, 1, '.', '.');
+            $string = number_format($rounded, 2, '', '.');
             return mb_substr($string, 0, -7) . 'M';
         }
 

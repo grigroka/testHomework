@@ -16,6 +16,7 @@ class NumberFormatterTest extends TestCase
     public function getTestData()
     {
         return [
+            [100000000, '100.00M'],
             [2835779, '2.84M'],
             [999500, '1.00M'],
             [999499, '999K'],
@@ -44,7 +45,8 @@ class NumberFormatterTest extends TestCase
             [-533.1, '-533.10'],
             [-66.6666, '-66.67'],
             [-12.00, '-12'],
-            [-123654.89, '-124K']
+            [-123654.89, '-124K'],
+            [-100000000, '-100.00M']
         ];
     }
 
