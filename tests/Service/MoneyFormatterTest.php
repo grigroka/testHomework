@@ -17,9 +17,20 @@ class MoneyFormatterTest extends TestCase
     public function testFormatEur()
     {
         $numberFormatterMock = $this->createMock(NumberFormatter::class);
+        $numberFormatterMock->expects($this->once())->method('convert')->willReturn('211.99');
+
+        $moneyFormatter = new MoneyFormatter($numberFormatterMock);
+        $result = $moneyFormatter->formatEur($numberFormatterMock);
+        $this->assertEquals('211.99 €', $result);
+    }
+
+    public function testFormatUsd()
+    {
+        $numberFormatterMock = $this->createMock(NumberFormatter::class);
         $numberFormatterMock->expects($this->once())->method('convert')->willReturn('2.84M');
 
         $moneyFormatter = new MoneyFormatter($numberFormatterMock);
-        $moneyFormatter->formatEur($numberFormatterMock);
+        $result = $moneyFormatter->formatUsd($numberFormatterMock);
+        $this->assertEquals('$2.84M', $result);
     }
 }
