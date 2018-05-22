@@ -14,7 +14,7 @@ class NumberFormatter
      * @param $number
      * @return string
      */
-    public function convert($number)
+    public function format($number)
     {
         $absNumber = abs($number);
         if ($absNumber >= 999500) {

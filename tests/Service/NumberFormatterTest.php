@@ -55,10 +55,10 @@ class NumberFormatterTest extends TestCase
      * @param $expected
      * @dataProvider getTestData
      */
-    public function testConverter($number, $expected)
+    public function testFormatter($number, $expected)
     {
-        $converter = new NumberFormatter();
-        $result = $converter->convert($number);
+        $formatter = new NumberFormatter();
+        $result = $formatter->format($number);
         $this->assertEquals($expected, $result);
     }
 }

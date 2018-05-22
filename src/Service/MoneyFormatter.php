@@ -22,13 +22,13 @@ class MoneyFormatter
 
     public function formatEur($number)
     {
-        $convertedNumber = $this->numberFormatter->convert($number);
-        return $convertedNumber . ' €';
+        $formattedNumber = $this->numberFormatter->format($number);
+        return $formattedNumber . ' €';
     }
 
     public function formatUsd($number)
     {
-        $convertedNumber = $this->numberFormatter->convert($number);
-        return '$'.$convertedNumber;
+        $formattedNumber = $this->numberFormatter->format($number);
+        return '$'.$formattedNumber;
     }
 }
